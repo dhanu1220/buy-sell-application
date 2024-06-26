@@ -5,6 +5,6 @@ def index(request):
     return HttpResponse("hello")
 
 def products(request):
-    products = ["iphone","android"]
+    products = ["iphone","android","mac"]
     return HttpResponse(products)
 
