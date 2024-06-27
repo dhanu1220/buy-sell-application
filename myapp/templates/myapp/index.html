@@ -1,7 +1,28 @@
+{% load static %}
 <html>
-    <head></head>
+    <head>
+        <link rel="stylesheet" href="{% static 'myapp/styles.css' %}"></link>
+    </head>
     <body>
-        <h1>This is a template</h1>
+        <nav>
+            <div>
+                <div>
+                    <div class="flex px-2 py-3">
+                        <div class="flex px-2 py-3" >
+    
+                            <img class="h-8 w-8" src="{% static 'myapp/images/logo.png' %}" alt="">
+                            <span class="text-gray-500 font-semibold text-lg">Buy&Sell</span>
+                        </div>
+                        <div class="flex px-2 py-3">
+                            <span class="text-gray-500 font-semibold text-lg">Home</span>
+                        </div>
+                        <div class="flex px-2 py-3">
+                            <span class="text-gray-500 font-semibold text-lg">ContactUs</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
         {% for product in products %}
         <a href="{% url 'product_detail' product.id %}">
             {{product.name}} , {{product.price}} , {{product.desc}} <br/>

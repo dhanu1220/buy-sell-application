@@ -1,0 +1,4 @@
+/* the below are classes that gets converted into css code when compiled */
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";

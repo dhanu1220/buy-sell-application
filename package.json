@@ -1,0 +1,16 @@
+{
+  "name": "mysite",
+  "version": "1.0.0",
+  "description": "Django is a Python framework that makes it easier to create web sites using Python.\r It allows us to build any kind of scalable and complex web application from scratch\r which could be accessed by thousands of people\r ## Virtualenv\r Virtualenv allows easy management of dependencies and avoids conflicts between different versions of libraries and packages.\r ### Creating virtualenv\r To create a virtual environment, run `virtualenv env`. Activate the virtualenv from the script using `.\\env\\Scripts\\activate` on Windows or `source env/bin/activate` on macOS and Linux.\r ## Installing Django\r ```\r pip install django\r ```\r ## Running app on local server\r **On windows**\r ```\r python manage.py runserver\r ```\r **On mac**\r ```\r python3 manage.py runserver\r ```\r ## Django ORM\r Django’s Object-Relational Mapping (ORM) system, is a bridge between the database and the application’s code.</br>\r Django’s ORM is essentially a pythonic technique to build SQL to query and edit your database and obtain results.\r ## Django shell\r Django shell allows us to save, update and retrieve our models in our code. Interacting with databases while working with projects in production is very essential and unavoidable.\r ```\r python manage.py shell\r ```",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build":"tailwind build myapp/static/myapp/src/tailwind.css -o myapp/static/myapp/styles.css"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "tailwindcss": "^2.2.16"
+  }
+}
