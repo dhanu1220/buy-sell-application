@@ -1,2 +1,6 @@
-This is detail page
-{{product}}
+{% extends 'myapp/base.html' %}
+{% block content %}
+{{product.name}}
+{{product.price}}
+{{product.desc}}
+{% endblock %}

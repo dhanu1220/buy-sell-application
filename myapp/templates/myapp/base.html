@@ -5,7 +5,29 @@
         <link rel="stylesheet" href="{% static 'myapp/styles.css' %}"></link>
     </head>
     <body>
-        {% block body %}
+        <nav class="bg-white shadow-lg">
+            <div class="max-w-6xl mx-auto px-4">
+                <div >
+                    <div class="flex px-1 py-3">
+                        <div class="flex px-10 py-3" >
+    
+                            <img class="h-8 w-8" src="{% static 'myapp/images/logo.png' %}" alt="">
+                            <span class="text-gray-500 font-semibold text-lg">Buy&Sell</span>
+                        </div>
+                        <div class="flex px-2 py-3">
+                            <span class="text-gray-500 font-semibold text-lg">Home</span>
+                        </div>
+                        <div class="flex px-2 py-3">
+                            <span class="text-gray-500 font-semibold text-lg">ContactUs</span>
+                        </div>
+                        <div class="flex px-2 py-3">
+                            <span class="text-gray-500 font-semibold text-lg">About</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        {% block content %}
 
         {% endblock %}
 
