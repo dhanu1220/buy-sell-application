@@ -1,0 +1,17 @@
+{% extends 'myapp/base.html' %}
+{% block content %}
+
+<h1 class="text-2xlm-10 font-bold" >Delete Product</h1>
+<form method="post" class="bg-white shadow-md m-10 w-3/5 rounded px-8 pt-6">
+    {% csrf_token %}
+    <div class="mb-4">
+        <label class="block text-gray-700 text-sm font-bold mb-2">Are you sure? you want to delete the product</label>
+    </div>
+    <div class="mb-4">
+        <label class="block text-gray-600 text-sm font-bold mb-2">
+            {{product.name}}
+        </label>
+    </div>
+    <input class="bg-red-500 text-white px-5 py-2" type="submit" name="Confirm" value="confirm">
+</form>
+{% endblock %} 
