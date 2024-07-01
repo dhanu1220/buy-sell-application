@@ -12,12 +12,12 @@ def products(request):
     }
     return render(request,'myapp/index.html',context)
 
-def detail(request,id):
+def product_detail(request,id):
     product = Product.objects.get(id=id)
     context={
         'product':product
     }
-    return render(request,'myapp/detail.html',context)
+    return render(request,'myapp/product_detail.html',context)
 
 def add_product(request):
     if request.method=='POST':

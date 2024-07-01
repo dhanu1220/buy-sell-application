@@ -1,0 +1,22 @@
+{% extends 'myapp/base.html' %}
+{% block content %}
+<h1 class="text-2xl m-10 font-bold">LOGIN</h1>
+<div >
+    <form class="w-2/5 bg-white shadow-md m-10 rounded mb-4" method="post" >
+        {% csrf_token %}
+        <div class="mb-4">
+            <label class="block text-gray-700 text-sm font-bold mb-2 px-10" for="">Username</label>
+            <div class="shadow appearance-none border rounder py-2 ml-10 mr-10 px-4">{{form.username}}</div>
+        </div>
+
+        <div class="mb-4">
+            <label class="block text-gray-700 text-sm font-bold mb-2 px-10" for="">Enter Password</label>
+            <div class="shadow appearance-none border rounder py-2 ml-10 mr-10 px-4">{{form.password}}</div>
+
+        </div>
+
+        <button type="submit" class="bg-green-500 text-white px-5 py-2 ml-10 mb-10">LOGIN</button>
+    </form>
+</div>
+
+{% endblock %}

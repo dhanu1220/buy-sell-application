@@ -14,7 +14,7 @@
 
 <div class="p-10 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 xl:grid-cols-3 lg:grid-cols-3 gap-5">
     {% for product in products %}
-    <a href="{% url 'product_detail' product.id %}">
+    <a href="{% url 'myapp:product_detail' product.id %}">
     <div class=" w-30 h-30 rounded overflow-hidden shadow-lg">
         <img src="{{product.image.url}}" alt="">
         <div class="px-6 py-4">
