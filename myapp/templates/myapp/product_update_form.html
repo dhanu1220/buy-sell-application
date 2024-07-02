@@ -1,0 +1,31 @@
+{% extends 'myapp/base.html' %}
+{% block content %}
+<h1 class="text-2xl font-bold text-green-500 ml-10 mt-4 ">UPDATE PRODUCT</h1>
+<form class="bg-white shadow-md m-10 px-8 py-4" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <div class="mb-7">
+        <input class="bg-green-500 text-white px-5 py-2" type="submit" value="Update Product">
+    </div>
+</form>
+<style>
+    input[type="text"], input[type="file"], textarea, select {
+        margin-bottom: 1rem;
+        padding: 0.5rem;
+        box-shadow: 0 4px 5px rgba(0, 0, 0, 0.1);
+        border-radius: 0.375rem; /* Tailwind's rounded-md */
+        width: 30%;
+    }
+
+    label {
+        display: flex;
+        margin-bottom: 0.2rem;
+        font-weight: bold;
+        color: #4A5568; 
+    }
+
+    .form-group {
+        margin-bottom: 1.5rem;
+    }
+</style>
+{% endblock %}
