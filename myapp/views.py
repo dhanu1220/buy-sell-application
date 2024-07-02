@@ -3,17 +3,21 @@ from django.http import HttpResponse
 from django.shortcuts import redirect
 from django.contrib.auth.decorators import login_required
 from .models import Product
-from django.contrib.auth.models import User
-
+from django.views.generic import ListView
 def index(request):
     return HttpResponse("hello")
 
-def products(request):
-    products = Product.objects.all()
-    context={
-        'products':products
-    }
-    return render(request,'myapp/index.html',context)
+# def products(request):
+#     products = Product.objects.all()
+#     context={
+#         'products':products
+#     }
+#     return render(request,'myapp/index.html',context)
+
+class ProductListView(ListView):
+    model = Product
+    template_name = 'myapp/index.html'
+    context_object_name = 'products'
 
 def product_detail(request,id):
     product = Product.objects.get(id=id)
