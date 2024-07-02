@@ -15,8 +15,13 @@
                             <span class="text-gray-500 font-semibold text-lg">Buy&Sell</span>
                         </div>
                         <div class="flex px-2 py-3">
-                            <span class="text-gray-500 font-semibold text-lg">Home</span>
+                            <a href="{% url 'myapp:products' %}" class="text-gray-500 font-semibold text-lg">Home</a>
                         </div>
+
+                        <div class="flex px-2 py-3">
+                            <a href="{% url 'myapp:add_product' %}" class="text-gray-500 font-semibold text-lg">Add Post</a>
+                        </div>
+
                         <div class="flex px-2 py-3">
                             <span class="text-gray-500 font-semibold text-lg">ContactUs</span>
                         </div>
