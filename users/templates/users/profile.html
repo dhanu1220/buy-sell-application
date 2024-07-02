@@ -1,7 +1,12 @@
 {% extends 'myapp/base.html' %}
-
 {% block content %}
+<div class="grid p-10 grid-cols-1 lg:grid-cols-3 sm:grid-1">
+    <div claass="rounded shadow-lg">
+        <div>
+            <img src="{{user.profile.image.url}}" alt="">
+        </div>
+        <div class="font-bold text-xl mb-2 px-6 py-4">{{user.username}}</div>
+    </div>
+</div>
 
-    <h1>{{user.username}}</h1>
-    <img src="{{user.profile.image.url}}" alt="">
 {% endblock %}
