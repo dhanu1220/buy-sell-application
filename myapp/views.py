@@ -25,6 +25,12 @@ class ProductListView(ListView):
     context_object_name = 'products'
     paginate_by = 3
 
+    def get_queryset(self):
+        query = self.request.GET.get('q')
+        if query:
+            return Product.objects.filter(name__icontains=query)
+        return Product.objects.all()
+
 # *** FUNCTION BASED VIEW FOR DETAILS PAGE ***
 
 # def product_detail(request,id):

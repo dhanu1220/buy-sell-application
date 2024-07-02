@@ -1,46 +1,53 @@
 {% extends 'myapp/base.html' %}
 {% load static %}
 {% block content %}
-     
-    <main class="mt-2 mx-auto max-w-7xl px-4 sm:st-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-8 xl:mt-16">
-        <div class="sm:text-center lg:text-left">
-            <h1 class="text-4xl font-extrabold text-gray-900 sm:text-5xl md:text-6xl">
-                <span class="block xl:inline">Premium Mobiles</span>
-                <span class="block text-green-500 xl:inline">Non Premium Mobiles</span>
-            </h1>
-            <p class="mt-3 text-base text-gray-500 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto">Get best quality mobiles at lowest price</p>
-        </div>
-    </main>
+   
+<main class="mt-2 mx-auto max-w-7xl px-4 sm:st-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-8 xl:mt-16">
+    <div class="sm:text-center lg:text-left">
+        <h1 class="text-4xl font-extrabold text-gray-900 sm:text-5xl md:text-6xl">
+            <span class="block xl:inline">Premium Mobiles</span>
+            <span class="block text-green-500 xl:inline">Non Premium Mobiles</span>
+        </h1>
+        <p class="flex justify-center mt-3 text-base text-gray-500 font-bold sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto">Get best quality mobiles at lowest price</p>
+    </div>
+</main>
+
+<div class="mt-5 p-10 justify-center">
+    <form method="GET">
+        <input class="font-bold text-lg text-gray-700 shadow-lg py-2 px-4" name="q" id="product_name" placeholder="search products" type="text" value="{{ request.GET.q }}">
+        <button type="submit" class="ml-2 bg-green-500 text-white font-bold py-2 px-4 ml-10 rounded">Search</button>
+    </form>
+</div>
 
 <div class="p-10 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 xl:grid-cols-3 lg:grid-cols-3 gap-5">
     {% for product in products %}
     <a href="{% url 'myapp:product_detail' product.id %}">
-    <div class=" w-30 h-30 rounded overflow-hidden shadow-lg">
-        <img src="{{product.image.url}}" alt="">
-        <div class="px-6 py-4">
-            <div class="font-bold text-xl mb-2">{{product.name}}</div>
-            <div class="font-bold text-xl text-green-500 mb-2">${{product.price}}</div>
-            <div class="font-bold mb-2" >Posted by:<span class="text-red-400 px-1">{{product.seller_name}}</span></div>
-            <p class="text-gray">{{product.desc}}</p>
+        <div class="w-30 h-30 rounded overflow-hidden shadow-lg">
+            <img src="{{ product.image.url }}" alt="">
+            <div class="px-6 py-4">
+                <div class="font-bold text-xl mb-2">{{ product.name }}</div>
+                <div class="font-bold text-xl text-green-500 mb-2">${{ product.price }}</div>
+                <div class="font-bold mb-2">Posted by: <span class="text-red-400 px-1">{{ product.seller_name }}</span></div>
+                <p class="text-gray">{{ product.desc }}</p>
+            </div>
         </div>
-    </div>
     </a>
-        {% endfor %}
+    {% endfor %}
 </div>
 
 <div class="pagination flex justify-center mb-20">
     <span>
-            {% if page_obj.has_previous %}
-            <a class="text-sm font-medium border py-2 px-4 items-center inline-flex text-green-500 border-green-500 z-10 " href="?page=1">First</a>
-            <a class="text-sm font-medium border py-2 px-4 items-center inline-flex text-green-500 border-green-500 z-10 " href="?page={{page_obj.previous_page_number}}">Previous</a>
-            {% endif %}
-            <span class="text-sm font-medium border py-2 px-4 items-center inline-flex text-green-500 border-green-500 z-10 ">
-                Page {{page_obj.number}} of {{page_obj.paginator.num_pages}}
-            </span>
-            {% if page_obj.has_next %}
-            <a class="text-sm font-medium border py-2 px-4 items-center inline-flex text-green-500 border-green-500 z-10 " href="?page={{page_obj.next_page_number}}">Next</a>
-            <a class="text-sm font-medium border py-2 px-4 items-center inline-flex text-green-500 border-green-500 z-10 " href="?page={{page_obj.paginator.num_pages}}">Last</a>
-            {% endif %}
+        {% if page_obj.has_previous %}
+            <a class="text-sm font-medium border py-2 px-4 items-center inline-flex text-green-500 border-green-500 z-10" href="?q={{ request.GET.q }}&page=1">First</a>
+            <a class="text-sm font-medium border py-2 px-4 items-center inline-flex text-green-500 border-green-500 z-10" href="?q={{ request.GET.q }}&page={{ page_obj.previous_page_number }}">Previous</a>
+        {% endif %}
+        <span class="text-sm font-medium border py-2 px-4 items-center inline-flex text-green-500 border-green-500 z-10">
+            Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}
+        </span>
+        {% if page_obj.has_next %}
+            <a class="text-sm font-medium border py-2 px-4 items-center inline-flex text-green-500 border-green-500 z-10" href="?q={{ request.GET.q }}&page={{ page_obj.next_page_number }}">Next</a>
+            <a class="text-sm font-medium border py-2 px-4 items-center inline-flex text-green-500 border-green-500 z-10" href="?q={{ request.GET.q }}&page={{ page_obj.paginator.num_pages }}">Last</a>
+        {% endif %}
     </span>
 </div>
 
