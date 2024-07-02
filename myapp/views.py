@@ -3,6 +3,8 @@ from django.http import HttpResponse
 from django.shortcuts import redirect
 from django.contrib.auth.decorators import login_required
 from .models import Product
+from django.contrib.auth.models import User
+
 def index(request):
     return HttpResponse("hello")
 
@@ -57,3 +59,9 @@ def delete(request,id):
         return redirect('/myapp/products')
     return render(request,'myapp/delete.html',context)
 
+def my_listings(request):
+    products = Product.objects.filter(seller_name = request.user)
+    context={
+        'products': products,
+    }
+    return render(request,'myapp/mylistings.html',context)
