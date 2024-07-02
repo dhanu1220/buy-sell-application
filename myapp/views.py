@@ -4,7 +4,9 @@ from django.shortcuts import redirect
 from django.contrib.auth.decorators import login_required
 from .models import Product
 from django.views.generic import ListView,DetailView
-from django.views.generic.edit import CreateView, UpdateView
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
+from django.urls import reverse_lazy
+
 def index(request):
     return HttpResponse("hello")
 
@@ -71,15 +73,19 @@ class ProductUpdateView(UpdateView):
     fields = ['name','price','desc','image','seller_name']
     template_name_suffix = '_update_form'
 
-def delete(request,id):
-    product = Product.objects.get(id=id)
-    context={
-        'product':product
-    }
-    if request.method=='POST':
-        product.delete()
-        return redirect('/myapp/products')
-    return render(request,'myapp/delete.html',context)
+# def delete(request,id):
+#     product = Product.objects.get(id=id)
+#     context={
+#         'product':product
+#     }
+#     if request.method=='POST':
+#         product.delete()
+#         return redirect('/myapp/products')
+#     return render(request,'myapp/delete.html',context)
+
+class ProductDelete(DeleteView):
+    model = Product
+    success_url = reverse_lazy('myapp:products')
 
 def my_listings(request):
     products = Product.objects.filter(seller_name = request.user)
