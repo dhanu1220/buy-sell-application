@@ -3,9 +3,12 @@ from django.http import HttpResponse
 from django.shortcuts import redirect
 from django.contrib.auth.decorators import login_required
 from .models import Product
-from django.views.generic import ListView
+from django.views.generic import ListView,DetailView
+from django.views.generic.edit import CreateView
 def index(request):
     return HttpResponse("hello")
+
+# *** FUNCTION BASED VIEW TO PRINT LIST OF PRODUCTS ***
 
 # def products(request):
 #     products = Product.objects.all()
@@ -19,25 +22,35 @@ class ProductListView(ListView):
     template_name = 'myapp/index.html'
     context_object_name = 'products'
 
-def product_detail(request,id):
-    product = Product.objects.get(id=id)
-    context={
-        'product':product
-    }
-    return render(request,'myapp/product_detail.html',context)
+# *** FUNCTION BASED VIEW FOR DETAILS PAGE ***
 
-@login_required
-def add_product(request):
-    if request.method=='POST':
-        name=request.POST.get('name')
-        price=request.POST.get('price')
-        desc=request.POST.get('desc')
-        seller_name=request.user
-        image=request.FILES['upload']
-        product=Product(name=name,price=price,desc=desc,image=image,seller_name=seller_name)
-        product.save()
-    return render(request, 'myapp/addproduct.html')
+# def product_detail(request,id):
+#     product = Product.objects.get(id=id)
+#     context={
+#         'product':product
+#     }
+#     return render(request,'myapp/product_detail.html',context)
 
+class ProductDetailView(DetailView):
+    model = Product
+    template_name='myapp/product_detail.html'
+    context_object_name = 'product'
+
+# @login_required
+# def add_product(request):
+#     if request.method=='POST':
+#         name=request.POST.get('name')
+#         price=request.POST.get('price')
+#         desc=request.POST.get('desc')
+#         seller_name=request.user
+#         image=request.FILES['upload']
+#         product=Product(name=name,price=price,desc=desc,image=image,seller_name=seller_name)
+#         product.save()
+#     return render(request, 'myapp/addproduct.html')
+
+class ProductCreateView(CreateView):
+    model = Product
+    fields = ['name','price','desc','image','seller_name']
 
 def update_product(request,id):
     product = Product.objects.get(id=id)
