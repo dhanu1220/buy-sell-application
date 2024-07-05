@@ -2,9 +2,9 @@
 ### Description 
 This is a simple eCommerce website built with Django, designed for buying and selling products.
 ## Features
-Product Listings: Browse and search for products available for sale.
-User Profiles: Create profiles for buyers and sellers with personal information and order history.
-Secure Authentication: User authentication and authorization to ensure secure access.
+Product Listings: Browse and search for products available for sale.</br>
+User Profiles: Create profiles for buyers and sellers with personal information and order history.</br>
+Secure Authentication: User authentication and authorization to ensure secure access.</br>
 Payment Integration: Process payments securely using Stripe.
 ### Creating virtualenv
 To create a virtual environment, run `virtualenv env`. Activate the virtualenv from the script using `.\env\Scripts\activate` on Windows or `source env/bin/activate` on macOS and Linux.
