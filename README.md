@@ -1,9 +1,11 @@
-## What is Django
-Django is a Python framework that makes it easier to create web sites using Python.
-It allows us to build any kind of scalable and complex web application from scratch
-which could be accessed by thousands of people
-## Virtualenv
-Virtualenv allows easy management of dependencies and avoids conflicts between different versions of libraries and packages.
+## Django E-commerce Application
+### Description 
+This is a simple eCommerce website built with Django, designed for buying and selling products.
+## Features
+Product Listings: Browse and search for products available for sale.
+User Profiles: Create profiles for buyers and sellers with personal information and order history.
+Secure Authentication: User authentication and authorization to ensure secure access.
+Payment Integration: Process payments securely using Stripe.
 ### Creating virtualenv
 To create a virtual environment, run `virtualenv env`. Activate the virtualenv from the script using `.\env\Scripts\activate` on Windows or `source env/bin/activate` on macOS and Linux.
 ## Installing Django
