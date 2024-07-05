@@ -12,5 +12,8 @@ urlpatterns = [
     path('products/update/<int:pk>',views.ProductUpdateView.as_view(),name='update_product'),
     path('products/delete/<int:pk>/', views.ProductDelete.as_view(), name='delete_product'),
     path('products/mylistings',views.my_listings,name='mylistings'),
+    path('success/',views.PaymentSuccessView.as_view(), name = 'success'),
+    path('failed/',views.PaymentFailedView.as_view(), name = 'failed'),
+    path('api/checkout-session/<id>/',views.create_checkout_session,name='api_checkout_session'),
 
 ]
