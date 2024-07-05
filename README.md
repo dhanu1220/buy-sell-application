@@ -1,6 +1,7 @@
 # Django E-commerce Application
 ### Description 
 This is a simple eCommerce website built with Django, designed for buying and selling products.User needs to create an account on our website to sell products and to proceed with the payment section.
+**Tech Stack** - Django, Tailwind CSS, SQLite3
 ## Features
 * Browse and search for products available for sale.</br>
 * Create profiles for buyers and sellers with personal information and order history.</br>
