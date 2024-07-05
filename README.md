@@ -1,11 +1,14 @@
 ## Django E-commerce Application
 ### Description 
-This is a simple eCommerce website built with Django, designed for buying and selling products.
+This is a simple eCommerce website built with Django, designed for buying and selling products.User needs to create an account on our website to sell products and to proceed with the payment section.
 ## Features
-Product Listings: Browse and search for products available for sale.</br>
-User Profiles: Create profiles for buyers and sellers with personal information and order history.</br>
-Secure Authentication: User authentication and authorization to ensure secure access.</br>
-Payment Integration: Process payments securely using Stripe.
+** Browse and search for products available for sale.</br>
+** Create profiles for buyers and sellers with personal information and order history.</br>
+** User authentication and authorization to ensure secure access.</br>
+** Process payments securely using Stripe.</br>
+** Sellers can manage their products.
+     ** Create, edit, and delete products.
+     ** View a list of their specific products.
 ### Creating virtualenv
 To create a virtual environment, run `virtualenv env`. Activate the virtualenv from the script using `.\env\Scripts\activate` on Windows or `source env/bin/activate` on macOS and Linux.
 ## Installing Django
