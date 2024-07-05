@@ -19,18 +19,13 @@ pip install django
 ## Django ORM
 Django’s Object-Relational Mapping (ORM) system, is a bridge between the database and the application’s code.</br>
 Django’s ORM is essentially a pythonic technique to build SQL to query and edit your database and obtain results.
-### Creating Migrations
+##### Creating Migrations
 ```bash
 python manage.py makemigrations
 ```
-### Applying Migrations
+##### Applying Migrations
 ```bash
 python manage.py migration
-```
-## Django shell
-Django shell allows us to save, update and retrieve our models in our code. Interacting with databases while working with projects in production is very essential and unavoidable.
-```
-python manage.py shell
 ```
 ## Running app on local server
 **On windows**
