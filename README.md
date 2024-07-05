@@ -1,4 +1,4 @@
-## Django E-commerce Application
+# Django E-commerce Application
 ### Description 
 This is a simple eCommerce website built with Django, designed for buying and selling products.User needs to create an account on our website to sell products and to proceed with the payment section.
 ## Features
