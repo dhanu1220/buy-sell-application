@@ -9,7 +9,8 @@ This is a simple eCommerce website built with Django, designed for buying and se
 * Sellers can manage their products.
      * Create, edit, and delete products.
      * View a list of their specific products.
-### Creating virtualenv
+# Installation
+## Creating virtualenv
 To create a virtual environment, run `virtualenv env`. Activate the virtualenv from the script using `.\env\Scripts\activate` on Windows or `source env/bin/activate` on macOS and Linux.
 ## Installing Django
 ```
